@@ -17,4 +17,12 @@ async def ping(ctx):
     await ctx.send('pong')
 
 
+@bot.command()
+async def clean(ctx):
+        if ctx.author.guild_permissions.administrator:
+            await ctx.channel.purge()
+            await ctx.channel.send('消し炭だ！')
+        else:
+            await ctx.channel.send('何様のつもり？')
+    
 bot.run(token)
