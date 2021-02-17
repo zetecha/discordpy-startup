@@ -16,13 +16,13 @@ async def on_command_error(ctx, error):
 async def ping(ctx):
     await ctx.send('pong')
     
-@client.event
-async def on_message(message):
-    if message.content == '/cu':
-        if message.author.guild_permissions.administrator:
-            await message.channel.purge()
-            await message.channel.send('塵一つ残らないね！')
+@bot.command()
+async def clean(ctx):
+    if ctx.author.guild_permissions.administrator:
+    await message.channel.purge()
+            await ctx.channel.send('塵一つ残らないね！')
         else:
-            await message.channel.send('何様のつもり？')
+            await ctx.channel.send('何様のつもり？')
             
+    
 bot.run(token)
