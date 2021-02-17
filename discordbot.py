@@ -24,12 +24,12 @@ async def on_command_error(ctx, error):　#わかんね
     error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
     await ctx.send(error_msg)
 
-@client.event
-async def on_message(message):
-    if message.author.bot:　#メッセージ送信者がBotだった場合(条件の絞り込みの為先に書く)
-        return　#戻る
-    if message.content == '/wakeup':　    # 「/wakeup」と発言したら
-        await message.channel.send('起きろ！！') #「起きろ！！」と発言
+#@client.event
+#async def on_message(message):
+#    if message.author.bot:　#メッセージ送信者がBotだった場合(条件の絞り込みの為先に書く)
+#        return　#戻る
+#    if message.content == '/wakeup':　    # 「/wakeup」と発言したら
+#        await message.channel.send('起きろ！！') #「起きろ！！」と発言
 
 
 @bot.command()
