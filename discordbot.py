@@ -15,14 +15,14 @@ async def on_command_error(ctx, error):
 @bot.command()
 async def ping(ctx):
     await ctx.send('pong')
-
-
-@bot.command()
-async def clean(ctx):
-        if ctx.author.guild_permissions.administrator:
-            await ctx.channel.purge()
-            await ctx.channel.send('消し炭だ！')
-        else:
-            await ctx.channel.send('何様のつもり？')
     
+@client.event
+async def on_message(message):
+    if message.content == '/cu':
+        if message.author.guild_permissions.administrator:
+            await message.channel.purge()
+            await message.channel.send('塵一つ残らないね！')
+        else:
+            await message.channel.send('何様のつもり？')
+            
 bot.run(token)
