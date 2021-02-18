@@ -15,6 +15,9 @@ async def on_command_error(ctx, error):
     error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
     await ctx.send(error_msg)
     
+
+bot.run(token)
+    
 @client.event 
 async def on_voice_state_update(before, after): 
      await ctx.send('pong')
@@ -35,5 +38,4 @@ async def ping(ctx):
     await ctx.send('pong')
 
 
-bot.run(token)
-client.run(token) 
+    client.run(token) 
